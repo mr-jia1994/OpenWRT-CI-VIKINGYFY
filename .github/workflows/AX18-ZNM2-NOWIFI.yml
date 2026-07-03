@@ -2,7 +2,7 @@
 # Copyright (C) 2026 VIKINGYFY
 
 #CI项目
-name: IPQ60XX-NOWIFI
+name: AX18-ZNM2-NOWIFI
 
 #CI计划
 on:
@@ -35,12 +35,12 @@ jobs:
       fail-fast: false
       #max-parallel: 3
       matrix:
-        CONFIG: [AX18-ZNMW-WIFI-NO]
+        CONFIG: [AX18-ZNM2-WIFI-NO]
         SOURCE: [VIKINGYFY/immortalwrt]
         BRANCH: [main]
 
     #调用公用编译核心WRT-CORE.yml
-    uses: ./.github/workflows/WRT-CORE.yml
+    uses: ./.github/workflows/WRT-CORE-NO_GENERAL.yml
     with:
       #编译配置
       WRT_CONFIG: ${{matrix.CONFIG}}
